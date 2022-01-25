@@ -1,0 +1,14 @@
+alg-min-cala-config
+archlinux-appstream-data-pamac
+google-chrome
+mongodb-bin
+nerd-fonts-fira-code
+pfetch
+rtl8821au-dkms-git
+shell-color-scripts
+spicetify-cli
+spotify
+spotify-adblock
+ttf-font-logos
+visual-studio-code-bin
+zplug
