@@ -11,7 +11,7 @@ makepkg -si --no-confirm
 
 echo -e "\n======> Installing AUR Packages\n"
 
-yay -S $(<pgk/aur-packages.txt)
+yay -S $(<pkg/aur-packages.txt)
 
 echo -e "\n======> Installing oh-my-zsh\n"
 
