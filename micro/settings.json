@@ -1,6 +1,6 @@
 {
     "autosu": true,
-    "colorscheme": "twilight",
+    "colorscheme": "darcula",
     "diffgutter": true,
     "ignorecase": false,
     "initlua": true,
