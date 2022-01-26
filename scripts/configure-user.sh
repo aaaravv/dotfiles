@@ -11,7 +11,6 @@ echo
 mkdir -p ${HOME}/.config
 
 cp -frv \
-../.themes \
 ../.vim \
 ../.vimrc \
 ../.zshrc \
@@ -25,12 +24,20 @@ cp -frv \
 ${HOME}/.config/
 
 
+echo -e "\n======> Installing Paradise Theme."
+mkdir -p $HOME/opt-repos && cd opt-repos
+git clone https://github.com/Manas140/paradise.git && cd paradise
+./install.sh -[l|d|a]
+
+
 echo -e "\n======> Installing Vim-Plugins"
 if [ ! -e ${HOME}/.vim/autoload/plug.vim ]; then
     curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+
 echo -e "\n======> Installing ZSH-Plugins"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/.config/zsh/zsh-auto
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ${HOME}/.config/zsh/fsh
+
