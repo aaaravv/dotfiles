@@ -1,14 +1,15 @@
 # Exec Sway
 if [ "$(tty)" = "/dev/tty1" ]; then
-  exec sway
+    exec sway
 fi
 
 ### EXPORT
 export TERM="alacritty"                                 # getting proper colors
 export HISTCONTROL='ignoreboth:erasedups'               # to remove duplicate entries & ignore spaces
 export ALTERNATE_EDITOR="code"                          # for Visual Studio Code
-export EDITOR="micro"              		        # for micro terminal editor
+export EDITOR="micro"              		        		# for micro terminal editor
 export ZSH="$HOME/.oh-my-zsh"	                        # Path to oh-my-zsh installation.
+export MICRO_TRUECOLOR=1
 export GRIM_DEFAULT_DIR='$HOME/Pictures/Screenshots/'   # Default Screenshots path [grim]
 export XDG_PICTURES_DIR='$HOME/Pictures/Screenshots/'   # Default Screenshots path [sys]
 
@@ -30,27 +31,27 @@ source $ZSH/oh-my-zsh.sh
 # usage: ex <file>
 ex ()
 {
-  if [ -f "$1" ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+    if [ -f "$1" ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1   ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *.deb)       ar x $1      ;;
+            *.tar.xz)    tar xf $1    ;;
+            *.tar.zst)   unzstd $1    ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 
@@ -58,22 +59,22 @@ ex ()
 
 # navigation
 up () {
-  local d=""
-  local limit="$1"
-
-  # Default to limit of 1
-  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
-    limit=1
-  fi
-
-  for ((i=1;i<=limit;i++)); do
-    d="../$d"
-  done
-
-  # perform cd. Show error if cd fails
-  if ! cd "$d"; then
-    echo "Couldn't go up $limit dirs.";
-  fi
+    local d=""
+    local limit="$1"
+    
+    # Default to limit of 1
+    if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
+        limit=1
+    fi
+    
+    for ((i=1;i<=limit;i++)); do
+        d="../$d"
+    done
+    
+    # perform cd. Show error if cd fails
+    if ! cd "$d"; then
+        echo "Couldn't go up $limit dirs.";
+    fi
 }
 
 
@@ -86,11 +87,11 @@ alias wayc="micro ~/.config/waybar/config"
 # Make a directory
 alias md='mkdir'
 
-	
+
 # ls - list directory
-alias l.='ls -l -d .* --color=always'                               # list dot files
+alias l.='ls -l -d .* --color=always'                               I# list dot files
 alias ls='ls -l --color=always --group-directories-first'    		# default listing with colors
-alias la='ls -l -a --color=always --group-directories-first'		# list all files and dirs 	    	
+alias la='ls -l -a --color=always --group-directories-first'		# list all files and dirs
 
 
 # pacman and yay
@@ -130,7 +131,7 @@ alias gau='git add -u'
 alias gaa='git add .'
 alias gb='git branch'
 alias gbd='git branh -D'
-alias gbrd='git push origin:' 
+alias gbrd='git push origin:'
 alias gco='git checkout'
 alias gc='git clone'
 alias gcm='git commit -m'
@@ -156,13 +157,3 @@ alias ws='nmcli device status'        # current network status
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
 # Or install it from the Arch User Repository: shell-color-scripts
 colorscript random		                 # adds a right amount of bling to your console :)
-
-
-### Starship config ( for gnome )
-
-#Set terminal title
-# function set_win_title(){
-#     echo -ne "\033]0; aarav-console@1aM \007"
-       
-# }
-# precmd_functions+=(set_win_title) 
