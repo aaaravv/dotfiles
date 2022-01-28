@@ -19,6 +19,7 @@ ${HOME}/
 cp -frv \
 ../gtk-3.0 \
 ../micro \
+../neofetch \
 ../spicetify \
 ../starship.toml \
 ${HOME}/.config/
