@@ -12,9 +12,29 @@ export ZSH="$HOME/.oh-my-zsh"	                        # Path to oh-my-zsh instal
 export MICRO_TRUECOLOR=1					
 
 
+# ZSH History
+export HISTFILE=~/.zsh_history
+
+
 # Display Manager 
 XDG_SESSION_TYPE=wayland
 XDG_CURRENT_DESKTOP=sway
+
+
+# Shell env options
+setopt autocd
+setopt APPEND_HISTORY 
+setopt INC_APPEND_HISTORY 
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt EXTENDED_HISTORY
+setopt COMPLETE_IN_WORD 
+setopt ALWAYS_TO_END            
+setopt PROMPT_SUBST
+unsetopt MENU_COMPLETE
+setopt AUTO_MENU
+
 
 ### Init Starship
 eval "$(starship init zsh)"
@@ -97,7 +117,7 @@ alias md='mkdir'
 
 	
 # ls - list directory
-alias l.='ls -l -d .* --color=always'                               I# list dot files
+alias l.='ls -l -d .* --color=always'                               # list dot files
 alias ls='ls -l --color=always --group-directories-first'    		# default listing with colors
 alias la='ls -l -a --color=always --group-directories-first'		# list all files and dirs 	    	
 
@@ -159,12 +179,16 @@ alias wc='nmcli device wifi connect'  # connect to wifi with ssid
 alias wl='nmcli device wifi list'     # list wifi devices
 alias ws='nmcli device status'        # current network status
 
+# Proton-VPN
+
+	alias \
+		connect='protonvpn-cli connect' \
+		disconnect='protonvpn-cli disconnect'
 
 
 ### RANDOM COLOR SCRIPT ###
-# Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
-# Or install it from the Arch User Repository: shell-color-scripts
-colorscript random		                 # adds a right amount of bling to your console :)
+# Install it from the Arch User Repository: shell-color-scripts
+colorscript random		               # adds a right amount of bling to your console :)
 
 
 ### Starship config ( for gnome )
