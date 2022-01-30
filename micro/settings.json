@@ -1,6 +1,6 @@
 {
     "autosu": true,
-    "colorscheme": "darcula",
+    "colorscheme": "dracula",
     "diffgutter": true,
     "ignorecase": false,
     "initlua": true,
