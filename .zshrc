@@ -5,7 +5,6 @@ fi
 
 ### EXPORT
 export TERM="alacritty"                                 # getting proper colors
-export HISTCONTROL='ignoreboth:erasedups'               # to remove duplicate entries & ignore spaces
 export ALTERNATE_EDITOR="code"                          # for Visual Studio Code
 export EDITOR="micro"              		        		# for micro terminal editor
 export ZSH="$HOME/.oh-my-zsh"	                        # Path to oh-my-zsh installation.
@@ -14,7 +13,10 @@ export MICRO_TRUECOLOR=1
 
 # ZSH History
 export HISTFILE=~/.zsh_history
-
+export HISTFILESIZE=1000
+export HISTSIZE=1000
+export SAVEHIST=1000
+export HISTTIMEFORMAT="[%F %T] " 						#
 
 # Display Manager 
 XDG_SESSION_TYPE=wayland
