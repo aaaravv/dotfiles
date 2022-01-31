@@ -32,6 +32,7 @@ linux
 linux-firmware
 linux-headers
 lsb-release
+lsd
 lvm2
 m4
 make
