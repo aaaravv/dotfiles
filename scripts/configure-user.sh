@@ -39,6 +39,7 @@ fi
 
 
 echo -e "\n======> Installing ZSH-Plugins"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/.config/zsh/zsh-auto
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ${HOME}/.config/zsh/fsh
-
+mkdir -p $HOME/.config/zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${HOME}/.config/zsh/zsh-auto
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.config/zsh/fsh
+git clone https://github.com/rupa/z.git ${HOME}/.config/zsh/z
