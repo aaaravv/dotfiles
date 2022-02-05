@@ -73,10 +73,11 @@ style_user = "bold blue"
 show_always = false
 
 [shell]
-zsh_indicator = "" 
+zsh_indicator = " " 
 powershell_indicator = "_"
 unknown_indicator = "zsh shell"
 disabled = false
+style = "#00ffff"
 
 
 [time]
