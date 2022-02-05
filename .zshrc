@@ -16,7 +16,7 @@ export HISTFILE=~/.zsh_history
 export HISTFILESIZE=1000
 export HISTSIZE=1000
 export SAVEHIST=1000
-export HISTTIMEFORMAT="[%F %T] " 						#
+export HISTTIMEFORMAT="[%F %T] " 						
 
 # Display Manager 
 XDG_SESSION_TYPE=wayland
@@ -49,12 +49,12 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 plugins=(vscode sudo bgnotify zsh-autosuggestions z zsh-syntax-highlighting )
 
 # Source Plugins
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/zsh-auto/zsh-autosuggestions.plugin.zsh
+source ~/.config/zsh/fsh/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/z/z.sh
-source ~/.config/zsh/vscode/vscode.plugin.zsh
-source ~/.config/zsh/sudo/sudo.plugin.zsh
-source ~/.config/zsh/bgnotify/bgnotify.plugin.zsh
+# source ~/.config/zsh/vscode/vscode.plugin.zsh
+# source ~/.config/zsh/sudo/sudo.plugin.zsh
+# source ~/.config/zsh/bgnotify/bgnotify.plugin.zsh
 
 
 ### ARCHIVE EXTRACTION
@@ -107,6 +107,10 @@ up () {
   fi
 }
 
+# Navigate with llama
+function nav {
+  cd "$(llama "$@")"
+}
 
 # To edit configs files
 alias zshc="micro ~/.zshrc"
@@ -117,11 +121,12 @@ alias wayc="micro ~/.config/waybar/config"
 # Make a directory
 alias md='mkdir'
 
+
 	
 # ls - list directory
-alias l.='ls -l -d .* --color=always'                               # list dot files
-alias ls='ls -l --color=always --group-directories-first'    		# default listing with colors
-alias la='ls -l -a --color=always --group-directories-first'		# list all files and dirs 	    	
+alias l.='lsd -l -d .*'     # list dot files
+alias ls='lsd -l'    		# default listing with colors
+alias la='lsd -l -a'		# list all files and dirs 	    	
 
 
 # pacman and yay
@@ -133,6 +138,7 @@ alias pacup='sudo pacman -Syyu'                          # update only standard 
 alias aurup='yay -Sua --noconfirm'                       # update only AUR pkgs (yay)
 alias update='yay -Syu --noconfirm'                      # update standard pkgs and AUR pkgs (yay)
 alias unlock='sudo rm /var/lib/pacman/db.lck'            # remove pacman lock
+alias srch='yay -Ssy'									 # search for a package in AUR
 alias clean='sudo pacman -R $(pacman -Qdtq)'      		 # clean dependencies
 alias cleanup='sudo pacman -Qdtq | sudo pacman -Rs -'    # remove orphaned packages
 
@@ -146,6 +152,7 @@ alias fgrep='fgrep --color=auto'
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+alias crm='rm -rf -i'
 
 
 # Clear console
@@ -155,6 +162,8 @@ alias clr='clear'
 # Exec Vs-Code
 alias cde='code .'
 
+# Micro editor
+alias et='micro'
 
 # git
 alias gau='git add -u'
@@ -168,7 +177,7 @@ alias gcm='git commit -m'
 alias gd='git diff'
 alias gf='git fetch'
 alias gm='git merge'
-alias gmnf='git merge --no-ff'
+alias gmnf='git merge --no-comit --no-ff'
 alias gpl='git pull origin'
 alias gp='git push origin'
 alias gr='git restore'
@@ -181,23 +190,7 @@ alias wc='nmcli device wifi connect'  # connect to wifi with ssid
 alias wl='nmcli device wifi list'     # list wifi devices
 alias ws='nmcli device status'        # current network status
 
-# Proton-VPN
-
-	alias \
-		connect='protonvpn-cli connect' \
-		disconnect='protonvpn-cli disconnect'
-
 
 ### RANDOM COLOR SCRIPT ###
 # Install it from the Arch User Repository: shell-color-scripts
 colorscript random		               # adds a right amount of bling to your console :)
-
-
-### Starship config ( for gnome )
-
-#Set terminal title
-# function set_win_title(){
-#     echo -ne "\033]0; aarav-console@1aM \007"
-       
-# }
-# precmd_functions+=(set_win_title) 
