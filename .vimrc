@@ -1,10 +1,5 @@
-packadd! dracula
-
 "" Turn syntax highlighting on.
 syntax enable
-
-""Change color scheme to dracula.
-colorscheme dracula
 
 ""Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
