@@ -1,6 +1,9 @@
 "" Turn syntax highlighting on.
 syntax enable
 
+"" Set colorscheme
+colorscheme onedark
+
 ""Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
