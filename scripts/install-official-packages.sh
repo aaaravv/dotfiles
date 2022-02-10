@@ -9,4 +9,4 @@ fi
 echo -e "\n======> Installing Official Packages\n"
 
 # --noconfirm is used to select all packages from groups
-pacman -Sy --needed $(<pkg/official-packages.txt)
+pacman -Sy --needed $(<official-packages.txt)
