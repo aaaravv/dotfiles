@@ -6,6 +6,7 @@ cp -rv ${HOME}/.config/fontconfig ../fontconfig
 cp -rv ${HOME}/.config/neofetch/* ../neofetch/
 cp -rv ${HOME}/.config/spicetify/config-xpui.ini ../spicetify
 cp -rv ${HOME}/.config/starship.toml ../
+cp -rv ${HOME}/.config/sxiv/ ../
 cp -rv ${HOME}/.vim/* ../.vim
 cp -rv ${HOME}/.vimrc ../
 cp -rv ${HOME}/.zshrc ../

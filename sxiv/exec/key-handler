@@ -1,0 +1,10 @@
+#!/bin/sh
+
+to_replace="$(grep "^output * " ~/.config/sway/config | cut -d' ' -f4- | tr " " "\n" | sed -n 1p)"
+
+while read file
+do
+	case "$1" in
+	"w") swaymsg "output * background ${file} fill" && sed -i "s|$to_replace|$file|" ~/.config/sway/config
+	esac
+done
