@@ -11,6 +11,7 @@ echo -e "\n======> Installing AUR Packages...\n"
 
 yay -Y --devel --combinedupgrade --batchinstall --save
 yay -S \
+	autotiling-rs.git \
 	7-zip-bin \
 	google-chrome \
 	llama \
