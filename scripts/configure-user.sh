@@ -52,18 +52,17 @@ fi
 
 
 echo -e "\n======> Installing ZSH-Plugins"
-mkdir -p $HOME/.config/zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ${HOME}/.config/zsh/zsh-auto
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.config/zsh/fsh
-git clone https://github.com/rupa/z.git ${HOME}/.config/zsh/z
+mkdir -p $HOME/.config/zsh/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${HOME}/.config/zsh/plugins/zsh-auto
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.config/zsh/plugins/fsh
+git clone https://github.com/rupa/z.git ${HOME}/.config/zsh/plugins/z
 
-mkdir -p ${HOME}/temp
-cd ${HOME}/temp
+mkdir -p ${HOME}/temp && cd ${HOME}/temp
 
 git init
 git remote add -f origin https://github.com/ohmyzsh/ohmyzsh.git
 git sparse-checkout init
 git sparse-checkout set "plugins/bgnotify" "plugins/sudo"
 git pull origin master
-cp -frv plugins/* ${HOME}/.config/zsh/
+cp -frv plugins/* ${HOME}/.config/zsh/plugins
 rm -rf ${HOME}/temp
