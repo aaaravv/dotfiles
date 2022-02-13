@@ -3,126 +3,44 @@ if [ "$(tty)" = "/dev/tty1" ]; then
   exec sway
 fi
 
-### EXPORT
-export TERM="alacritty"                                 # getting proper colors
-export ALTERNATE_EDITOR="code"                          # for Visual Studio Code
-export EDITOR="micro"              		        		# for micro terminal editor
-export ZSH="$HOME/.oh-my-zsh"	                        # Path to oh-my-zsh installation.
-export MICRO_TRUECOLOR=1					
-
-
-# ZSH History
-export HISTFILE=~/.zsh_history
-export HISTFILESIZE=1000
-export HISTSIZE=1000
-export SAVEHIST=1000
-export HISTTIMEFORMAT="[%F %T] " 						
-
 # Display Manager 
 XDG_SESSION_TYPE=wayland
 XDG_CURRENT_DESKTOP=sway
 
-
-# Shell env options
-setopt autocd
-setopt APPEND_HISTORY 
-setopt INC_APPEND_HISTORY 
-setopt HIST_IGNORE_DUPS
-setopt HIST_FIND_NO_DUPS
-setopt HIST_REDUCE_BLANKS
-setopt EXTENDED_HISTORY
-setopt COMPLETE_IN_WORD 
-setopt ALWAYS_TO_END            
-setopt PROMPT_SUBST
-unsetopt MENU_COMPLETE
-setopt AUTO_MENU
-
-
 ### Init Starship
 eval "$(starship init zsh)"
 
-### "bat" as manpager
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-
 ### Plugins
-plugins=(vscode sudo bgnotify zsh-autosuggestions z zsh-syntax-highlighting )
+plugins=(sudo bgnotify zsh-autosuggestions z zsh-syntax-highlighting)
 
-# Source Plugins
-source ~/.config/zsh/zsh-auto/zsh-autosuggestions.plugin.zsh
-source ~/.config/zsh/fsh/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/z/z.sh
-# source ~/.config/zsh/vscode/vscode.plugin.zsh
-# source ~/.config/zsh/sudo/sudo.plugin.zsh
-# source ~/.config/zsh/bgnotify/bgnotify.plugin.zsh
+# Source Plugins & other files
+source ~/.config/zsh/plugins/zsh-auto/zsh-autosuggestions.plugin.zsh
+source ~/.config/zsh/plugins/fsh/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/plugins/z/z.sh
+source ~/.config/zsh/plugins/sudo/sudo.plugin.zsh
+source ~/.config/zsh/plugins/bgnotify/bgnotify.plugin.zsh
 
-
-### ARCHIVE EXTRACTION
-# usage: ex <file>
-ex ()
-{
-  if [ -f "$1" ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
+source ~/.config/zsh/functions
+source ~/.config/zsh/settings.zsh
 
 
 ### ALIASES ###
 
-# navigation
-up () {
-  local d=""
-  local limit="$1"
-
-  # Default to limit of 1
-  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
-    limit=1
-  fi
-
-  for ((i=1;i<=limit;i++)); do
-    d="../$d"
-  done
-
-  # perform cd. Show error if cd fails
-  if ! cd "$d"; then
-    echo "Couldn't go up $limit dirs.";
-  fi
-}
-
-# Navigate with llama
-function nav {
-  cd "$(llama "$@")"
-}
-
 # To edit configs files
-alias zshc="micro ~/.zshrc"
-alias swayc="micro ~/.config/sway/config"
-alias wayc="micro ~/.config/waybar/config"
+alias zshc="$editor ~/.zshrc"
+alias swayc="$editor ~/.config/sway/config"
+alias wayc="$editor ~/.config/waybar/config"
 
+# Get back to last dir
+alias .='cd -'
 
 # Make a directory
 alias md='mkdir'
 
+alias clip="wl-copy"
+alias devar="unset var"
 
-	
+
 # ls - list directory
 alias l.='lsd -l -d .*'     # list dot files
 alias ls='lsd -l'    		# default listing with colors
@@ -154,30 +72,28 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias crm='rm -rf -i'
 
-
 # Clear console
 alias clr='clear'
 
-
 # Exec Vs-Code
-alias cde='code .'
+alias vc='code .'
 
 # Micro editor
-alias et='micro'
+alias e='micro'
 
 # git
 alias gau='git add -u'
 alias gaa='git add .'
 alias gb='git branch'
 alias gbd='git branh -D'
-alias gbrd='git push origin:' 
+alias gbrd='git push origin :' 
 alias gco='git checkout'
 alias gc='git clone'
 alias gcm='git commit -m'
 alias gd='git diff'
 alias gf='git fetch'
 alias gm='git merge'
-alias gmnf='git merge --no-comit --no-ff'
+alias gmnf='git merge --no-commit --no-ff'
 alias gpl='git pull origin'
 alias gp='git push origin'
 alias gr='git restore'
@@ -186,11 +102,16 @@ alias grs='git restore --staged'
 alias gs='git status'
 
 # Network (nmcli)
-alias wc='nmcli device wifi connect'  # connect to wifi with ssid
-alias wl='nmcli device wifi list'     # list wifi devices
-alias ws='nmcli device status'        # current network status
+alias wcon='nmcli device wifi connect'	# connect to wifi with ssid
+alias wl='nmcli device wifi list'     	# list wifi devices
+alias ws='nmcli device status'       	# current network status
 
+#add new fonts
+alias ufc='sudo fc-cache -fv'
 
-### RANDOM COLOR SCRIPT ###
+## Scripts
+alias bt='~/.scripts/btconnect.sh'		# bluetooth script to connect to paired-devices
+
+## RANDOM COLOR SCRIPT ##
 # Install it from the Arch User Repository: shell-color-scripts
-colorscript random		               # adds a right amount of bling to your console :)
+colorscript random		               
