@@ -2,3 +2,4 @@ micro/buffers
 micro/backups
 zsh/plugins
 zsh/.zcompdump
+.vim/autoload/plug.vim
