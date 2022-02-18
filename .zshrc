@@ -6,16 +6,15 @@ fi
 # Display Manager 
 XDG_SESSION_TYPE=wayland
 XDG_CURRENT_DESKTOP=sway
+QT_QPA_PLATFORM=wayland
+QT_QPA_PLATFORM=wayland-egl
 
 ### Init Starship
 eval "$(starship init zsh)"
 
-### Plugins
-plugins=(sudo bgnotify zsh-autosuggestions z zsh-syntax-highlighting)
-
 # Source Plugins & other files
 source ~/.config/zsh/plugins/zsh-auto/zsh-autosuggestions.plugin.zsh
-source ~/.config/zsh/plugins/fsh/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.config/zsh/plugins/z/z.sh
 source ~/.config/zsh/plugins/sudo/sudo.plugin.zsh
 source ~/.config/zsh/plugins/bgnotify/bgnotify.plugin.zsh
@@ -27,9 +26,9 @@ source ~/.config/zsh/settings.zsh
 ### ALIASES ###
 
 # To edit configs files
-alias zshc="$editor ~/.zshrc"
-alias swayc="$editor ~/.config/sway/config"
-alias wayc="$editor ~/.config/waybar/config"
+alias zshc="$EDITOR ~/.zshrc"
+alias swayc="$EDITOR ~/.config/sway/config"
+alias wayc="$EDITOR ~/.config/waybar/config"
 
 # Get back to last dir
 alias .='cd -'
@@ -37,9 +36,7 @@ alias .='cd -'
 # Make a directory
 alias md='mkdir'
 
-alias clip="wl-copy"
 alias devar="unset var"
-
 
 # ls - list directory
 alias l.='lsd -l -d .*'     # list dot files
