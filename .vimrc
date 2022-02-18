@@ -2,7 +2,7 @@
 syntax enable
 
 "" Set colorscheme
-colorscheme onedark
+colorscheme atom-dark-256
 
 ""Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
