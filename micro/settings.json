@@ -1,6 +1,6 @@
 {
     "autosu": true,
-    "colorscheme": "atom-dark",
+    "colorscheme": "onedark",
     "diffgutter": true,
     "ignorecase": false,
     "initlua": true,
