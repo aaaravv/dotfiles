@@ -108,6 +108,7 @@ alias ufc='sudo fc-cache -fv'
 
 ## Scripts
 alias bt='~/.scripts/btconnect.sh'		# bluetooth script to connect to paired-devices
+alias scc='~/.scripts/theme-switcher.sh' # switches between various color schemes
 
 ## RANDOM COLOR SCRIPT ##
 # Install it from the Arch User Repository: shell-color-scripts
