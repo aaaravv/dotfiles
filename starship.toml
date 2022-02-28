@@ -18,7 +18,7 @@ format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
 format = "[$symbol$branch]($style) "
-symbol = "🌱 "
+symbol = "שׂ "
 style = "bold yellow"
 
 
@@ -29,16 +29,16 @@ tag_symbol = "🔖 "
 
 [git_status]
 conflicted = "="
-ahead = "⇡"
-behind = "⇣"
+ahead = "⇡${count} "
+behind = "⇣${count} "
 diverged = "⇕"
 up_to_date = "✓"
-untracked =	"?"
-stashed = "$"
-modified = "!"
+untracked =	"?${count} "
+stashed = "$${count} "
+modified = "!${count} "
 staged = '[+\($count\)](green)'
-renamed = "»"
-deleted = "✘"
+renamed = "»${count} "
+deleted = "✘${count} "
 style = "#b57edc"
 
 
