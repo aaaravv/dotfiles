@@ -4,29 +4,7 @@
 #           read by login shell
 #           set environment variables here
 
-### EXPORTS 
-# XDG base directory
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-### "bat" as manpager
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-# zsh config dir
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
-
-# ZSH History
-export HISTFILE=~/.zsh_history
-export HISTFILESIZE=1000
-export HISTSIZE=1000
-export SAVEHIST=1000
-export HISTTIMEFORMAT="[%F %T] " 
-
-export TERM="alacritty"                                 # getting proper colors
-export VCODE="code"                          			# for Visual Studio Code
-export EDITOR="micro"              		        		# for micro terminal editor
-export MICRO_TRUECOLOR=1					
-
+					
 # initialize completions
 autoload -Uz compinit && compinit -i
 zstyle ':completion:*' menu select

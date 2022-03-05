@@ -15,9 +15,8 @@ source ~/.config/zsh/settings.zsh
 ### ALIASES ###
 
 # To edit configs files
-alias zshc="$EDITOR ~/.zshrc"
+alias zshc="$EDITOR ~/.config/zsh/.zshrc"
 alias swayc="$EDITOR ~/.config/sway/config"
-alias wayc="$EDITOR ~/.config/waybar/config"
 
 # Get back to last dir
 alias .='cd -'

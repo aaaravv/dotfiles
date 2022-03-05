@@ -1,0 +1,1 @@
+/home/am/.config/zsh/.zshenv
