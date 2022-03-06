@@ -24,6 +24,7 @@ cp -frv \
 ../sxiv \
 ../spicetify \
 ../starship.toml \
+../zsh \
 ${HOME}/.config/
 
 
@@ -44,11 +45,11 @@ mkdir -p $HOME/.local/share/fonts
 git clone https://github.com/ayush-rathore/inter-nerd-font $HOME/.local/share/fonts/
 
 
-echo -e "\n======> Installing Vim-Plugins"
-if [ ! -e ${HOME}/.vim/autoload/plug.vim ]; then
-    curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
+# echo -e "\n======> Installing Vim-Plugins"
+# if [ ! -e ${HOME}/.vim/autoload/plug.vim ]; then
+    # curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs \
+    # https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# fi
 
 
 echo -e "\n======> Installing ZSH-Plugins"
