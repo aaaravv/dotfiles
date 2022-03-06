@@ -23,6 +23,7 @@ yay -S \
 	spotify \
 	spotify-adblock \
 	ttf-font-logos \
+	ttf-material-design-icons \
 	visual-studio-code-bin
 
 echo -e "\n======> Completed Installing AUR Packages!\n"
