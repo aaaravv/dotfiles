@@ -3,3 +3,6 @@ micro/backups
 zsh/plugins
 zsh/.zcompdump
 .vim/autoload/plug.vim
+fontconfig/conf.d
+zsh/history
+zsh/.zsh_history
