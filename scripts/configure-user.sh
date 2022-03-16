@@ -13,6 +13,10 @@ mkdir -p ${HOME}/.config
 cp -frv ../.config/ \
 ${HOME}/
 
+mkdir -p ${HOME}/temp && cd temp
+git clone https://github.com/Aarav619/Sway-On-Arch.git && cd Sway-On-Arch
+make install
+rm -rf ${HOME}/temp
 
 echo -e "\n======> Switching default shell to ZSH."
 user=whoami
