@@ -5,6 +5,8 @@ to_replace="$(grep "^output * " ~/.config/sway/config | cut -d' ' -f4- | tr " " 
 while read file
 do
 	case "$1" in
-	"w") swaymsg "output * background ${file} fill" && sed -i "s|$to_replace|$file|" ~/.config/sway/config
+	"w") swaymsg "output * background ${file} fill" && sed -i "s|$to_replace|$file|" ~/.config/sway/config ;;
+	"c") cat $file | wl-copy ;;
+	"d") mv $file .local/share/Trash/files ;;
 	esac
 done
