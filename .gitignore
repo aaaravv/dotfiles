@@ -1,8 +1,7 @@
-micro/buffers
-micro/backups
-zsh/plugins
-zsh/.zcompdump
-.vim/autoload/plug.vim
-fontconfig/conf.d
-zsh/history
-zsh/.zsh_history
+.config/micro/buffers
+.config/micro/backups
+.config/zsh/plugins
+.config/zsh/.zcompdump
+.config/fontconfig/conf.d
+.config/zsh/history
+.config/zsh/.zsh_history
