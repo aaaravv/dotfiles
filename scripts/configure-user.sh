@@ -10,18 +10,8 @@ echo
 
 mkdir -p ${HOME}/.config
 
-cp -frv \
-../fontconfig \
-../gtk-3.0 \
-../lsd \
-../micro \
-../neofetch \
-../htop \
-../sxiv \
-../spicetify \
-../starship.toml \
-../zsh \
-${HOME}/.config/
+cp -frv ../.config/ \
+${HOME}/
 
 
 echo -e "\n======> Switching default shell to ZSH."
