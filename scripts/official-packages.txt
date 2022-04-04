@@ -6,10 +6,12 @@ base
 bat
 bison
 bluez-utils
+brightnessctl
 btop
 dunst
 efibootmgr
 fakeroot
+firefox
 flex
 font-manager
 fzf
@@ -19,6 +21,7 @@ gvfs-mtp
 gzip
 htop
 inter-font
+light
 lsd
 man-db
 micro
@@ -44,7 +47,6 @@ sway
 swayidle
 sxiv
 telegram-desktop
-ttf-cascadia-code
 ttf-font-awesome
 ttf-fira-code
 unzip
@@ -58,5 +60,4 @@ xdg-utils
 xf86-video-amdgpu
 xf86-video-ati
 xorg-xwayland
-yad
 zsh
