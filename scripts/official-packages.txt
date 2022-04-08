@@ -40,7 +40,6 @@ papirus-icon-theme
 pavucontrol
 playerctl
 pulsemixer
-rtl8821au-dkms-git
 starship
 slurp
 sway

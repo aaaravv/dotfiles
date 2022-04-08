@@ -13,14 +13,11 @@ yay -Y --devel --combinedupgrade --batchinstall --nodiffmenu --save
 yay -S \
 	autotiling-rs.git \
 	7-zip-bin \
-	google-chrome \
 	nerd-fonts-jetbrains-mono \
 	ponymix \
-	rtl8821au-dkms-git \
 	spicetify-cli \
 	spotify \
 	spotify-adblock \
-	tor-browser \
 	ttf-font-logos \
 	ttf-material-design-icons \
 	visual-studio-code-bin
