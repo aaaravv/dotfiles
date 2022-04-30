@@ -8,7 +8,7 @@ cp -rv ${HOME}/.config/neofetch/* ../.config/neofetch/
 cp -rv ${HOME}/.config/spicetify/config-xpui.ini ../.config/spicetify
 cp -rv ${HOME}/.config/starship.toml ../.config/
 cp -rv ${HOME}/.config/sxiv/ ../.config/
-cp -rv ${HOME}/.config/zsh/* ../.config/zsh/
+cp -rv ${HOME}/.config/zsh/ ../.config/
 cp -rv ${HOME}/.zshenv ../
 
 cp -rv /etc/pacman.conf ../scripts/sys-configs/
