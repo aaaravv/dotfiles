@@ -26,6 +26,9 @@ alias md='mkdir'
 
 alias devar="unset var"
 
+# Fetch current dir path
+alias fp="pwd | wl-copy"
+
 # ls - list directory
 alias l.='lsd -l -d .*'     # list dot files
 alias ls='lsd -l'    		# default listing with colors
@@ -70,7 +73,7 @@ alias e='micro'
 alias gau='git add -u'
 alias gaa='git add .'
 alias gb='git branch'
-alias gbd='git branh -D'
+alias gbd='git branch -D'
 alias gbrd='git push origin :' 
 alias gco='git checkout'
 alias gc='git clone'
@@ -85,6 +88,11 @@ alias gr='git restore'
 alias grao='git remote add origin'
 alias grs='git restore --staged'
 alias gs='git status'
+alias grb='git rebase -i'
+alias gl='git log'
+alias glo='git log --pretty=oneline'
+alias grh='git reset --hard'
+alias gbl='git branch --list'
 
 # Network (nmcli)
 alias wcon='nmcli device wifi connect'	# connect to wifi with ssid
@@ -94,6 +102,6 @@ alias ws='nmcli device status'       	# current network status
 #add new fonts
 alias ufc='sudo fc-cache -fv'
 
-## RANDOM COLOR SCRIPT ##
-# Install it from the Arch User Repository: shell-color-scripts
-colorscript random		               
+## Flexing on others!
+# neofetch
+fm6000 --de sway -r --color=random
