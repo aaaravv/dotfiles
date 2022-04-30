@@ -36,7 +36,7 @@ function fvc() {
   local file=$(fzf --multi --reverse) #get file from fzf
   if [[ $file ]]; then
     for prog in $(echo $file); #open all the selected files
-    do; $VEDITOR $prog; done;
+    do; $VCODE $prog; done;
   else
     echo "cancelled fzf"
   fi
@@ -91,7 +91,7 @@ ex ()
 
 # nav [llama] : navigate with llama
 function nav {
-  cd "$(sxiv fuzzy finder "$@")"
+    cd "$(llama "$@")"
 }
 
 # Make dir & cd
@@ -110,28 +110,28 @@ hst() {
 
 if [ -f "/etc/arch-release" ]; then
 # pacls [pacman list]: list all installed packages
-pacls() {
+pls() {
     var="$(pacman -Qq | fzf --height "100%" --multi --preview "pacman -Qi {1}" --preview-window "right:70%" --prompt "pkg ")"
     [ -n "$var" ] && echo "$var" | clipbd
     devar; return 0
 }
 
 # pacfd [pacman find]: find a package
-pacfd() {
+pfd() {
     var="$(pacman -Slq | fzf --height "100%" --multi --preview "pacman -Si {1}" --preview-window "right:70%" --prompt "pkg ")"
     [ -n "$var" ] && echo "$var" | clipbd
     devar; return 0
 }
 
 # yayls [yay list]: list all installed AUR packages
-yayls() {
+yls() {
     var="$(yay -Qmq | fzf --height "100%" --multi --preview "yay -Qi {1}" --preview-window "right:70%" --prompt "pkg ")"
     [ -n "$var" ] && echo "$var" | clipbd
     devar; return 0
 }
 
 # yayfd [yay find]: find an AUR package
-yayfd() {
+yfd() {
     var="$(yay -Slaq | fzf --height "100%" --multi --preview "yay -Si {1}" --preview-window "right:70%" --prompt "pkg ")"
     [ -n "$var" ] && echo "$var" | clipbd
     devar; return 0
