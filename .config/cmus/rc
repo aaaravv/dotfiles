@@ -1,0 +1,43 @@
+set aaa_mode=all
+set altformat_current=%F
+set altformat_playlist= %f%= %d
+set altformat_title=%f
+set altformat_trackwin= %f%= %d 
+
+set auto_reshuffle=true
+set buffer_seconds=10
+
+set confirm_run=true
+set continue=true
+set continue_album=true
+
+set display_artist_sort_name=false
+set dsp.alsa.device=default
+
+set follow=false
+set format_current=
+set format_playlist=  %t%= %d  
+set format_playlist_va=
+set format_statusline= %{status} %t%= %1{follow}%1{repeat}%1{continue}%1{shuffle} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }} 
+set format_title=%a - %l - %t (%y)
+set format_trackwin=%f%= %y
+set format_trackwin_album= %l %= %{albumduration} 
+set format_trackwin_va=%t (%a)%= %d 
+set format_treewin= %l
+set format_treewin_artist=%a
+
+set mixer.alsa.channel=Master
+set mixer.alsa.device=default
+set mixer.oss.channel=PCM
+set mixer.oss.device=
+set mixer.pulse.restore_volume=1
+set mouse=true
+set mpris=true
+set output_plugin=alsa
+
+set show_all_tracks=true
+set show_current_bitrate=false
+set show_hidden=false
+set show_playback_position=true
+set show_remaining_time=false
+set shuffle=true
