@@ -1,7 +1,10 @@
 # Sync dotfiles with git repo
 
+cp -rv ${HOME}/.config/cmus ../.config/
+cp -rv ${HOME}/.config/feh ../.config/
 cp -rv ${HOME}/.config/gtk-3.0/* ../.config/gtk-3.0/
 cp -rv ${HOME}/.config/htop/* ../.config/htop/
+cp -rv ${HOME}/.config/btop/* ../.config/htop/
 cp -rv ${HOME}/.config/micro/* ../.config/micro/
 cp -rv ${HOME}/.config/fontconfig/* ../.config/fontconfig/
 cp -rv ${HOME}/.config/neofetch/* ../.config/neofetch/
