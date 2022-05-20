@@ -5,3 +5,10 @@
 .config/fontconfig/conf.d
 .config/zsh/history
 .config/zsh/.zsh_history
+.config/cmus/playlists
+.config/cmus/cache
+.config/cmus/lib.pl
+.config/cmus/command-history
+.config/cmus/queue.pl
+.config/cmus/resume
+.config/cmus/search-history
