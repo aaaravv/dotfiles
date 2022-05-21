@@ -1,4 +1,4 @@
-### EXPORTS 
+### EXPORTS
 # XDG base directory
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -10,23 +10,27 @@ export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/shell/inputrc"
 export LESSHISTFILE="-"
-export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer 
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export _Z_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/z"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 ### "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export BAT_THEME=Nord
+export BAT_STYLE=changes
+export GF_PREFERRED_PAGER="delta --syntax-theme Nord -w __WIDTH__"
 
 # ZSH History
 export HISTFILE="$XDG_CONFIG_HOME/zsh/history"
 export HISTFILESIZE=1000
 export HISTSIZE=1000
 export SAVEHIST=1000
-export HISTTIMEFORMAT="[%F %T] " 
+export HISTTIMEFORMAT="[%F %T] "
 
 export TERM="alacritty"
 export VCODE="code"
 export EDITOR="micro"
 export MICRO_TRUECOLOR=1
 export VIDEO="mpv"
+export BROWSER="google-chrome-stable"
+export GF_SNAPSHOT_DIRECTORY='$HOME/.config/.git-fuzzy-snapshots'
