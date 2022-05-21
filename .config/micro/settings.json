@@ -1,6 +1,6 @@
 {
     "autosu": true,
-    "colorscheme": "twilight",
+    "colorscheme": "material-tc",
     "diffgutter": true,
     "hlsearch": true,
     "ignorecase": false,
