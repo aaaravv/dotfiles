@@ -77,7 +77,7 @@ zsh_indicator = " "
 powershell_indicator = "_"
 unknown_indicator = "zsh shell"
 disabled = false
-style = "#00ffff"
+style = "#1793d0"
 
 
 [time]
