@@ -18,7 +18,6 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export BAT_THEME=Nord
 export BAT_STYLE=changes
-export GF_PREFERRED_PAGER="delta --syntax-theme Nord -w __WIDTH__"
 
 # ZSH History
 export HISTFILE="$XDG_CONFIG_HOME/zsh/history"
@@ -33,4 +32,11 @@ export EDITOR="micro"
 export MICRO_TRUECOLOR=1
 export VIDEO="mpv"
 export BROWSER="google-chrome-stable"
-export GF_SNAPSHOT_DIRECTORY='$HOME/.config/.git-fuzzy-snapshots'
+export GF_SNAPSHOT_DIRECTORY="$HOME/Stuff/.git-fuzzy-snapshots"
+
+# For Android Studio
+export _JAVA_AWT_WM_NONREPARENTING=1
+export STUDIO_JDK=/usr/lib/jvm/java-11-openjdk
+
+# For Gradle
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
