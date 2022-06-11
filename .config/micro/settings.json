@@ -1,6 +1,6 @@
 {
     "autosu": true,
-    "colorscheme": "material-tc",
+    "colorscheme": "atom-dark",
     "diffgutter": true,
     "hlsearch": true,
     "ignorecase": false,
