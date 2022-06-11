@@ -6,7 +6,7 @@
 
 					
 # initialize completions
-autoload -Uz compinit && compinit -i
+autoload -U compinit && compinit -i
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 
