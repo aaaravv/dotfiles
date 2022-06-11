@@ -1,6 +1,6 @@
 ## India
-Server = https://archmirror.akhl.in/$repo/os/$arch
 Server = http://mirror.cse.iitk.ac.in/archlinux/$repo/os/$arch
+Server = https://archmirror.akhl.in/$repo/os/$arch
 Server = http://archlinux.mirror.net.in/archlinux/$repo/os/$arch
 Server = https://archlinux.mirror.net.in/archlinux/$repo/os/$arch
 Server = http://mirrors.piconets.webwerks.in/archlinux-mirror/$repo/os/$arch
