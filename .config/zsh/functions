@@ -1,18 +1,25 @@
 ### ZSH FUNCTIONS ###
 
-# cd into the directory of the selected file
-function cdf() {
-   local file
-   local dir
-   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
-   ls
+# cf [cd fuzzy]: cd from $HOME
+cf() {
+    if command -v fd >/dev/null; then
+        var="$(fd -d5 -td --follow --search-path ~ 2>/dev/null | fzf --prompt "cd ")"
+    else
+        var="$(find -L "$HOME" -maxdepth 5 -type d -not -path '*/\.*' 2>/dev/null | fzf --prompt "cd ")"
+    fi
+    [ -n "$var" ] && cd "$var" 2>/dev/null
+    devar; return 0
 }
 
-# Find Dirs + Hidden
-function cdhf() {
-  local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
-  ls
+# ch [cd hidden/here]: cd from current dir including hidden
+ch() {
+    if command -v fd >/dev/null; then
+        var="$(fd -d5 -td --follow --hidden --exclude '\.git*' 2>/dev/null | fzf --prompt "cd ")"
+    else
+        var="$(find -L . -maxdepth 5 -type d -not -path '*/\.git*' 2>/dev/null | fzf --prompt "cd ")"
+    fi
+    [ -n "$var" ] && cd "$var" 2>/dev/null
+    devar; return 0
 }
 
 # opens a file with xdg-open
