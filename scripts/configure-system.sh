@@ -6,8 +6,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # disable annoying beep
-echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist
-mkinitcpio -p linux
+sudo rmmod pcspkr
 
 # running commands to configure the system
 systemctl enable NetworkManager
