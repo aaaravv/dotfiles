@@ -16,7 +16,7 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 ### "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export BAT_THEME=Nord
+export BAT_THEME="dracula"
 export BAT_STYLE=changes
 
 # ZSH History
@@ -32,7 +32,6 @@ export EDITOR="micro"
 export MICRO_TRUECOLOR=1
 export VIDEO="mpv"
 export BROWSER="google-chrome-stable"
-export GF_SNAPSHOT_DIRECTORY="$HOME/Stuff/.git-fuzzy-snapshots"
 
 # For Android Studio
 export _JAVA_AWT_WM_NONREPARENTING=1
