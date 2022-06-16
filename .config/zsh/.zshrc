@@ -2,8 +2,8 @@
 eval "$(starship init zsh)"
 
 # Source Plugins & other files
-source ~/.config/zsh/plugins/zsh-auto/zsh-autosuggestions.plugin.zsh
-source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/.config/zsh/plugins/sudo/sudo.plugin.zsh
 source ~/.config/zsh/plugins/forgit/forgit.plugin.zsh
 source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
@@ -24,7 +24,7 @@ alias .='cd -'
 # Make a directory
 alias md='mkdir'
 
-alias devar="unset var"
+alias devar='unset var'
 
 # Fetch current dir path
 alias fp="pwd | wl-copy"
@@ -34,6 +34,7 @@ alias l.='lsd -l -d .*'     # list dot files
 alias ls='lsd -l'    		# default listing with colors
 alias la='lsd -l -a'		# list all files and dirs 	    	
 
+alias bt='bluetoothctl'
 
 # pacman and yay
 #--confirm turn off interactive prompt (yes/no)
@@ -110,6 +111,9 @@ alias ws='nmcli device status'       	# current network status
 
 #add new fonts
 alias ufc='sudo fc-cache -fv'
+
+# Sort mirrors
+alias um='sudo reflector --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 
 ## Flexing on others!
 neofetch

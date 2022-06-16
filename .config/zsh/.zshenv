@@ -16,7 +16,7 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 ### "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export BAT_THEME="dracula"
+export BAT_THEME="Dracula"
 export BAT_STYLE=changes
 
 # ZSH History
@@ -31,7 +31,8 @@ export VCODE="code"
 export EDITOR="micro"
 export MICRO_TRUECOLOR=1
 export VIDEO="mpv"
-export BROWSER="google-chrome-stable"
+export BROWSER="firefox"
+export MOZ_ENABLE_WAYLAND=1
 
 # For Android Studio
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -39,3 +40,10 @@ export STUDIO_JDK=/usr/lib/jvm/java-11-openjdk
 
 # For Gradle
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+
+#FZF
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --color=fg:#d0d0d0,bg:#121212,hl:#5f87af
+ --color=fg+:#d0d0d0,bg+:#262626,hl+:#5fd7ff
+ --color=info:#afaf87,prompt:#d7005f,pointer:#af5fff
+ --color=marker:#87ff00,spinner:#af5fff,header:#87afaf'

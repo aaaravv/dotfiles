@@ -15,7 +15,17 @@ cp -rv ${HOME}/.config/starship.toml ../.config/
 cp -rv ${HOME}/.config/zathura ../.config/
 cp -rv ${HOME}/.config/zsh/ ../.config/
 cp -rv ${HOME}/.zshenv ../
+cp -frv \
+    ${HOME}/.config/alacritty \
+    ${HOME}/.config/dunst \
+    ${HOME}/.config/sway \
+    ${HOME}/.config/gtklock \
+    ${HOME}/.config/waybar \
+    ${HOME}/.config/wofi \
+    ../.config/
 
-cp -rv /etc/pacman.conf ../scripts/sys-configs/
-cp -rv /etc/bluetooth/main.conf ../scripts/sys-configs/
-cp -rv /etc/pacman.d/mirrorlist ../scripts/sys-configs/
+cp -rv /etc/pacman.conf ../scripts/system-configs/
+cp -rv /etc/bluetooth/main.conf ../scripts/system-configs/
+cp -rv /etc/pacman.d/mirrorlist ../scripts/system-configs/
+cp -rv /etc/vsftpd ../scripts/system-configs/
+cp -rv /boot/loader/loader.conf ../scripts/system-configs/

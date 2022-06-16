@@ -1,5 +1,8 @@
 install:
-	cd scripts && sudo ./configure-system.sh && ./configure-user.sh && sudo ./install-official-packages.sh && ./install-aur-packages.sh
+	cd scripts && make pacman && make system && make aur && make user
 
-update: 
+update:
 	cd scripts && ./update.sh
+
+clean:
+	cd scripts && sudo ./clean.sh
