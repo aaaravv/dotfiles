@@ -24,21 +24,21 @@ chsh -s /bin/zsh $user
 zsh
 
 echo -e "\n======> Installing Paradise Theme."
-mkdir -p $HOME/.themes
-cd .themes
+mkdir -p $HOME/.local/share/themes && cd $HOME/.local/share/themes
 git clone https://github.com/Manas140/paradise.git && cd paradise
 ./install.sh -d
 
-echo -e "\n======> Installing Inter Nerd lfont"
+echo -e "\n======> Installing Inter Nerd font"
 
 mkdir -p $HOME/.local/share/fonts
 git clone https://github.com/ayush-rathore/inter-nerd-font $HOME/.local/share/fonts/
 
 echo -e "\n======> Installing ZSH-Plugins"
 mkdir -p $HOME/.config/zsh/plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ${HOME}/.config/zsh/plugins/zsh-auto
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.config/zsh/plugins/fsh
-git clone https://github.com/rupa/z.git ${HOME}/.config/zsh/plugins/z
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${HOME}/.config/zsh/plugins/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${HOME}/.config/zsh/plugins/
+git clone https://github.com/wfxr/forgit.git ${HOME}/.config/zsh/plugins/
+git clone https://github.com/Aloxaf/fzf-tab.git ${HOME}/.config/zsh/plugins/
 
 mkdir -p ${HOME}/temp && cd ${HOME}/temp
 
