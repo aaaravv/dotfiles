@@ -4,8 +4,9 @@ eval "$(starship init zsh)"
 # Source Plugins & other files
 source ~/.config/zsh/plugins/zsh-auto/zsh-autosuggestions.plugin.zsh
 source ~/.config/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source ~/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 source ~/.config/zsh/plugins/sudo/sudo.plugin.zsh
+source ~/.config/zsh/plugins/forgit/forgit.plugin.zsh
+source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 source ~/.config/zsh/plugins/bgnotify/bgnotify.plugin.zsh
 
 source ~/.config/zsh/functions
@@ -36,16 +37,15 @@ alias la='lsd -l -a'		# list all files and dirs
 
 # pacman and yay
 #--confirm turn off interactive prompt (yes/no)
-alias pi='sudo pacman -S'							     				# install a package with [name]
-alias yi='yay -S'									    				# install a package with [name] (aur)
-alias rem='sudo pacman -R'							     				# remove a package with [name]
-alias pacup='sudo pacman -Syyu'                          				# update only standard pkgs
-alias aurup='yay -Sua --noconfirm'                       				# update only AUR pkgs (yay)
-alias update='yay -Syu --noconfirm'                      				# update standard pkgs and AUR pkgs (yay)
-alias unlock='sudo rm /var/lib/pacman/db.lck'            				# remove pacman lock
-alias srch='yay -Ssy'									 				# search for a package in AUR
-alias clean='sudo pacman -R $(pacman -Qdtq) && sudo pacman -Rns'      	# clean dependencies
-alias cleanup='sudo pacman -Qdtq | sudo pacman -Rs -'    				# remove orphaned packages
+alias pi='sudo pacman -S'							     				                     # install a package with [name]
+alias yi='yay -S'									    									 # install a package with [name] (aur)
+alias rem='sudo pacman -R'							     									 # remove a package with [name]
+alias pacup='sudo pacman -Syyu'                          									 # update only standard pkgs
+alias aurup='yay -Sua --noconfirm'                       									 # update only AUR pkgs (yay)
+alias update='yay -Syu --noconfirm'                      									 # update standard pkgs and AUR pkgs (yay)
+alias unlock='sudo rm /var/lib/pacman/db.lck'            									 # remove pacman lock
+alias clean='sudo pacman -R $(pacman -Qdtq) && sudo pacman -Qdtq | sudo pacman -Rs -'      	 # clean dependencies
+alias cleanup='sudo pacman -Rns'    														 # remove orphaned packages
 
 
 # Colorize grep output
@@ -113,4 +113,3 @@ alias ufc='sudo fc-cache -fv'
 
 ## Flexing on others!
 neofetch
-
