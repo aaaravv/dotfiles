@@ -6,6 +6,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 # disable annoying beep
+set bell-style none
 sudo rmmod pcspkr
 
 # running commands to configure the system
@@ -25,3 +26,8 @@ cp -fv /sys-configs/mirrorlist /etc/pacman.d/
 mkinitcpio -p linux
 
 localectl set-locale LANG=en_US.UTF-8
+
+echo -e "\n======> Switching default shell to ZSH."
+user=whoami
+chsh -s /bin/zsh $user
+zsh

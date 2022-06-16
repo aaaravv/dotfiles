@@ -18,11 +18,6 @@ git clone https://github.com/Aarav619/Sway-On-Arch.git && cd Sway-On-Arch
 make install
 rm -rf ${HOME}/temp
 
-echo -e "\n======> Switching default shell to ZSH."
-user=whoami
-chsh -s /bin/zsh $user
-zsh
-
 echo -e "\n======> Installing Paradise Theme."
 mkdir -p $HOME/.local/share/themes && cd $HOME/.local/share/themes
 git clone https://github.com/Manas140/paradise.git && cd paradise
