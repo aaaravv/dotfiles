@@ -1,0 +1,14 @@
+window {
+   background-image: url("lock.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: black;
+   font-weight: bolder;
+   font-size: 40px;
+
+}
+
+#body{
+	font-size: 15px;
+}
