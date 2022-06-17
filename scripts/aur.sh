@@ -10,8 +10,8 @@ makepkg -si
 
 echo -e "\n======> Installing AUR Packages...\n"
 
-yay -Y --devel --combinedupgrade --batchinstall --nodiffmenu --save
-yes | yay -S \
+yay -Y --devel --noconfirm --combinedupgrade --batchinstall --nodiffmenu --save
+yes | yay -S --noconfirm\
 	nerd-fonts-jetbrains-mono \
 	google-chrome \
 	gtklock \

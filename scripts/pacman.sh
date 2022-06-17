@@ -8,4 +8,4 @@ fi
 
 echo -e "\n======> Installing Official Packages\n"
 
-yes | pacman -Sy --noconfirm --needed $(<packages.txt)
+pacman -Sy --noconfirm --needed $(<packages.txt)
