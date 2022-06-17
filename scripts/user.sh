@@ -9,15 +9,6 @@ echo -e "\n======> Switching default shell to ZSH."
 chsh -s /bin/zsh $USER
 zsh
 
-echo "======> Copying config files to respective dir..."
-echo
-
-# Copying config files to ~/.config/ dir
-mkdir -p ${HOME}/.config
-cp -frv ../.config/* ${HOME}/.config/
-cp -frv ../.zshenv ${HOME}/
-echo -e "\n======> Done Patching configs..."
-
 echo -e "\n======> Installing Paradise Theme."
 mkdir -p $HOME/.local/share/themes
 git clone https://gitlab.com/aaaravv/paradise-theme.git $HOME/.local/share/themes

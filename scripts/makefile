@@ -9,3 +9,6 @@ pacman:
 
 aur:
 		./aur.sh
+
+config:
+		./config.sh

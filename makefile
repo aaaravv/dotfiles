@@ -1,5 +1,5 @@
 install:
-	cd scripts && make pacman && make system && make aur && make user
+	cd scripts && make config && make pacman && make system && make aur && make user
 
 update:
 	cd scripts && ./update.sh
