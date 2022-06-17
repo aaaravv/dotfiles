@@ -38,4 +38,6 @@ mkdir -p ${HOME}/Pictures
 echo -e "\nGetting elegant wallpapers..."
 git clone https://gitlab.com/aaaravv/Wallpapers.git $HOME/Pictures
 
+mkdir -p ${HOME}/Pictures/Screenshots/
+
 echo -e "\nSway On Arch installed... Reboot system for changes to take effect!"
